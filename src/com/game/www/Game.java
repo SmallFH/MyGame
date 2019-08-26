@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 /**
- * ÓÎÏ·½çÃæÖĞµÄÒ»Ğ©¹¦ÄÜ
+ * æ¸¸æˆç•Œé¢ä¸­çš„ä¸€äº›åŠŸèƒ½
  */
 public class Game extends JPanel {
 	JFrame jf; 
@@ -30,16 +30,16 @@ public class Game extends JPanel {
 	boolean pause = false, no = false, gameStart = true, enemytime, awardtime;
 	
 	/**
-	 * ¹¹Ôì·½·¨ÊµÏÖ´°¿ÚµÄ³õÊ¼»¯
+	 * æ„é€ æ–¹æ³•å®ç°çª—å£çš„åˆå§‹åŒ–
 	 */
 	public Game() {
-		jf = new JFrame("ÈÙÒ«´ó×÷Õ½");
+		jf = new JFrame("è£è€€å¤§ä½œæˆ˜");
 		jf.setSize(JF_WIDTH, JF_HEIGHT);
 		jf.setLocationRelativeTo(null);
 		jf.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		jf.addWindowListener(new window());
 		jf.setResizable(false);
-		// ´°¿Ú´óĞ¡²»¿É¸Ä±ä
+		// çª—å£å¤§å°ä¸å¯æ”¹å˜
 		jf.setVisible(true);
 		jf.addKeyListener(new myKey());
 		jf.add(this);
@@ -49,12 +49,12 @@ public class Game extends JPanel {
 	}
 
 	/**
-	 * ´´½¨Ò»¸öÄÚ²¿ÀàÊµÏÖ´°¿Ú¼àÌı
+	 * åˆ›å»ºä¸€ä¸ªå†…éƒ¨ç±»å®ç°çª—å£ç›‘å¬
 	 */
 	class window extends WindowAdapter {
 		public void windowClosing(WindowEvent e) {
 			no = !no;
-			int close = JOptionPane.showConfirmDialog(jf, "ÓÂÊ¿°¡£¬ÄãÕæµÄÏëÍË³öÓÎÏ·Âğ£¿\nÊÇµÄ»°¾Íµã»÷yes\nµã»÷NoµÄ»°¿ÉÒÔ·µ»ØÓÎÏ·Å¼£¡", "ÍË³öorÖØÍæ",
+			int close = JOptionPane.showConfirmDialog(jf, "å‹‡å£«å•Šï¼Œä½ çœŸçš„æƒ³é€€å‡ºæ¸¸æˆå—ï¼Ÿ\næ˜¯çš„è¯å°±ç‚¹å‡»yes\nç‚¹å‡»Noçš„è¯å¯ä»¥è¿”å›æ¸¸æˆå¶ï¼", "é€€å‡ºoré‡ç©",
 					JOptionPane.YES_NO_OPTION);
 			if (close == JOptionPane.YES_OPTION) {
 				gameStart = false;
@@ -67,7 +67,7 @@ public class Game extends JPanel {
 	}
 
 	/**
-	 * ´´½¨Ò»¸öÄÚ²¿ÀàÊµÏÖ¼üÅÌµÄÊÂ¼ş´¦Àí
+	 * åˆ›å»ºä¸€ä¸ªå†…éƒ¨ç±»å®ç°é”®ç›˜çš„äº‹ä»¶å¤„ç†
 	 */
 	class myKey extends KeyAdapter {
 		public void keyPressed(KeyEvent e) {
@@ -88,7 +88,7 @@ public class Game extends JPanel {
 			
 			else if(e.getKeyCode() == KeyEvent.VK_R) {
 				no =! no;
-				int re = JOptionPane.showConfirmDialog(jf, "ÓÂÊ¿°¡£¬ÄãÕæµÄÏëÖØĞÂ¿ªÊ¼ÓÎÏ·Âğ£¿\nÊÇµÄ»°¾Íµã»÷yes\nÏë·µ»ØÓÎÏ·¾Íµã»÷No£¡", "ÖØÍæ£¿",
+				int re = JOptionPane.showConfirmDialog(jf, "å‹‡å£«å•Šï¼Œä½ çœŸçš„æƒ³é‡æ–°å¼€å§‹æ¸¸æˆå—ï¼Ÿ\næ˜¯çš„è¯å°±ç‚¹å‡»yes\næƒ³è¿”å›æ¸¸æˆå°±ç‚¹å‡»Noï¼", "é‡ç©ï¼Ÿ",
 						JOptionPane.YES_NO_OPTION);
 				if (re == JOptionPane.YES_OPTION) {
 					gameStart = false;
@@ -150,7 +150,7 @@ public class Game extends JPanel {
 	}
 	
 	/**
-	 * »­±Ê¹¤¾ßÓÃÀ´ÖØ¸´»æÖÆÓÎÏ·½çÃæ
+	 * ç”»ç¬”å·¥å…·ç”¨æ¥é‡å¤ç»˜åˆ¶æ¸¸æˆç•Œé¢
 	 */
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -167,11 +167,11 @@ public class Game extends JPanel {
 			awar.get(i).drawAward(g);
 		}
 		if (pause) {
-			Font font1 = new Font("¿¬Ìå", Font.BOLD, 50);
+			Font font1 = new Font("æ¥·ä½“", Font.BOLD, 50);
 			Color c = g.getColor();
 			g.setColor(Color.LIGHT_GRAY);
 			g.setFont(font1);
-			g.drawString("ÓÎÏ·ÔİÍ£", 320, 400);
+			g.drawString("æ¸¸æˆæš‚åœ", 320, 400);
 			g.setColor(c);
 		}
 		drawScore(g);
@@ -186,43 +186,43 @@ public class Game extends JPanel {
 		}
 
 	/**
-	 * »­ÓÎÏ··ÖÊı¡¢ÄÑ¶È¡¢ÉúÃüÖµ
+	 * ç”»æ¸¸æˆåˆ†æ•°ã€éš¾åº¦ã€ç”Ÿå‘½å€¼
 	 */
 	private void drawScore(Graphics g) {
 		int x = 10, y = 50;
-		Font font1 = new Font("¿¬Ìå", Font.BOLD, 30);
+		Font font1 = new Font("æ¥·ä½“", Font.BOLD, 30);
 		Color c = g.getColor();
 		g.setColor(Color.YELLOW);
 		g.setFont(font1);
-		g.drawString("»÷É±µĞÈËÊıÄ¿£º" + score, x, y);
-		Font font2 = new Font("¿¬Ìå", Font.BOLD, 30);
+		g.drawString("å‡»æ€æ•Œäººæ•°ç›®ï¼š" + score, x, y);
+		Font font2 = new Font("æ¥·ä½“", Font.BOLD, 30);
 		g.setColor(Color.white);
 		g.setFont(font2);
-		g.drawString("ÉúÃü" + sid.live, x, 2*y);
+		g.drawString("ç”Ÿå‘½" + sid.live, x, 2*y);
 		g.setColor(Color.ORANGE);
 		
 		if (gameTime >= 0 && gameTime < 15) {
-			g.drawString("ÓÎÏ·ÄÑ¶È£º0", 10, 150);
+			g.drawString("æ¸¸æˆéš¾åº¦ï¼š0", 10, 150);
 		}
 		if (gameTime >= 15 && gameTime < 30) {
-			g.drawString("ÓÎÏ·ÄÑ¶È£º1", 10, 150);
+			g.drawString("æ¸¸æˆéš¾åº¦ï¼š1", 10, 150);
 		}
 		if (gameTime >= 30 && gameTime < 45) {
-			g.drawString("ÓÎÏ·ÄÑ¶È£º2", 10, 150);
+			g.drawString("æ¸¸æˆéš¾åº¦ï¼š2", 10, 150);
 		}
 		if (gameTime >= 45 && gameTime < 60) {
-			g.drawString("ÓÎÏ·ÄÑ¶È£º3", 10, 150);
+			g.drawString("æ¸¸æˆéš¾åº¦ï¼š3", 10, 150);
 		}
 		if (gameTime >= 60 && gameTime < 75) {
-			g.drawString("ÓÎÏ·ÄÑ¶È£º4", 10, 150);
+			g.drawString("æ¸¸æˆéš¾åº¦ï¼š4", 10, 150);
 		}
 		if (gameTime >= 75) {
-			g.drawString("ÓÎÏ·ÄÑ¶È£º5", 10, 150);
+			g.drawString("æ¸¸æˆéš¾åº¦ï¼š5", 10, 150);
 		}
-			Font fontGame = new Font("¿¬Ìå", Font.BOLD, 30);
+			Font fontGame = new Font("æ¥·ä½“", Font.BOLD, 30);
 			g.setColor(Color.LIGHT_GRAY);
 			g.setFont(fontGame);
-			g.drawString("ÓÎÏ·Ê±¼ä:" + gameTime, x, 4*y);
+			g.drawString("æ¸¸æˆæ—¶é—´:" + gameTime, x, 4*y);
 		g.setColor(c);
 		if(!no) {
 		if (!pause) {
@@ -232,7 +232,7 @@ public class Game extends JPanel {
 		}
 	
 	/**
-	 * Åö×²¼ì²âµÄ·½·¨
+	 * ç¢°æ’æ£€æµ‹çš„æ–¹æ³•
 	 */
 	public void hitChick() {
 		Boolean a = false;
@@ -260,7 +260,7 @@ public class Game extends JPanel {
 					if(!no) {
 					if (score == victoryScore && gameTime < victoryGameTime) {
 						no = !no;
-						int clo = JOptionPane.showConfirmDialog(jf, "You are so À÷º¦£¡£¡£¡\nÄúÍê³ÉÈÎÎñµÄºÄÊ±Îª£º"+gameTime+"\nÈÃÎÒÃÇÔÙÀ´Ò»¾ÖºÃ²»ºÃ£¿\nÔÙÀ´Ò»¾Ö¾ÍµãYes\nµã»÷No·µ»ØÖ÷½çÃæ",
+						int clo = JOptionPane.showConfirmDialog(jf, "You are so å‰å®³ï¼ï¼ï¼\næ‚¨å®Œæˆä»»åŠ¡çš„è€—æ—¶ä¸ºï¼š"+gameTime+"\nè®©æˆ‘ä»¬å†æ¥ä¸€å±€å¥½ä¸å¥½ï¼Ÿ\nå†æ¥ä¸€å±€å°±ç‚¹Yes\nç‚¹å‡»Noè¿”å›ä¸»ç•Œé¢",
 								"Congratulation", JOptionPane.YES_NO_OPTION);
 						if (clo == JOptionPane.YES_OPTION) {
 							jf.dispose();
@@ -285,7 +285,7 @@ public class Game extends JPanel {
 				if(!no) {
 				if (sid.live == 0) {
 					no=!no;
-					int res = JOptionPane.showConfirmDialog(jf, "ÓÂÊ¿£¬ºÜ±§Ç¸ÄúÃ»ÓĞ´ï³ÉÈÎÎñÄ¿±ê¡£\nÄú±¾´ÎµÄ×îÖÕÉ±µĞÊıÊÇ£º" + score + "\nÓÂÊ¿£¬Äú±¾´ÎµÄºÄÊ±ÊÇ£º"+gameTime + "\n¾Í¿ì´ï³ÉÄ¿±êÁËÔÙ³¢ÊÔÒ»´Î°É£¿",
+					int res = JOptionPane.showConfirmDialog(jf, "å‹‡å£«ï¼Œå¾ˆæŠ±æ­‰æ‚¨æ²¡æœ‰è¾¾æˆä»»åŠ¡ç›®æ ‡ã€‚\næ‚¨æœ¬æ¬¡çš„æœ€ç»ˆæ€æ•Œæ•°æ˜¯ï¼š" + score + "\nå‹‡å£«ï¼Œæ‚¨æœ¬æ¬¡çš„è€—æ—¶æ˜¯ï¼š"+gameTime + "\nå°±å¿«è¾¾æˆç›®æ ‡äº†å†å°è¯•ä¸€æ¬¡å§ï¼Ÿ",
 							"GameOver", JOptionPane.YES_NO_OPTION);
 					if (res == JOptionPane.YES_OPTION) {
 						jf.dispose();
@@ -331,7 +331,7 @@ public class Game extends JPanel {
 	}
 
 	/**
-	 * ½±ÀøµÄÏß³Ì¿ØÖÆ·½·¨
+	 * å¥–åŠ±çš„çº¿ç¨‹æ§åˆ¶æ–¹æ³•
 	 * @author DELL
 	 *
 	 */
@@ -364,7 +364,7 @@ public class Game extends JPanel {
 	}
 	
 	/**
-	 * µĞÈËµÄÏß³Ì¿ØÖÆ·½·¨
+	 * æ•Œäººçš„çº¿ç¨‹æ§åˆ¶æ–¹æ³•
 	 * @author DELL
 	 *
 	 */
@@ -406,7 +406,7 @@ public class Game extends JPanel {
 			}
 		if (gameTime == victoryGameTime) {
 			no=!no;
-			int res = JOptionPane.showConfirmDialog(jf, "ÓÂÊ¿£¬ºÜ±§Ç¸ÄúÃ»ÓĞ´ï³ÉÈÎÎñÄ¿±ê¡£\nÄú±¾´ÎµÄ×îÖÕÉ±µĞÊıÊÇ£º" + score + "\nÓÂÊ¿£¬Äú±¾´ÎµÄºÄÊ±ÊÇ£º"+gameTime + "\n¾Í¿ì´ï³ÉÄ¿±êÁËÔÙ³¢ÊÔÒ»´Î°É£¿",
+			int res = JOptionPane.showConfirmDialog(jf, "å‹‡å£«ï¼Œå¾ˆæŠ±æ­‰æ‚¨æ²¡æœ‰è¾¾æˆä»»åŠ¡ç›®æ ‡ã€‚\næ‚¨æœ¬æ¬¡çš„æœ€ç»ˆæ€æ•Œæ•°æ˜¯ï¼š" + score + "\nå‹‡å£«ï¼Œæ‚¨æœ¬æ¬¡çš„è€—æ—¶æ˜¯ï¼š"+gameTime + "\nå°±å¿«è¾¾æˆç›®æ ‡äº†å†å°è¯•ä¸€æ¬¡å§ï¼Ÿ",
 					"GameOver", JOptionPane.YES_NO_OPTION);
 			if (res == JOptionPane.YES_OPTION) {
 				jf.dispose();
@@ -426,10 +426,10 @@ public class Game extends JPanel {
 		}
 	
 	/**
-	 * Íæ¼ÒµÄÔ½½çÏŞÖÆ
+	 * ç©å®¶çš„è¶Šç•Œé™åˆ¶
 	 */
 	public void sideMoveList() {
-		//½¨Ò»¸ö·½·¨
+		//å»ºä¸€ä¸ªæ–¹æ³•
 		if(sid.player_X>=JF_WIDTH-sid.ME_WIDTH) {
 			sid.player_X=JF_WIDTH-sid.ME_WIDTH;
 		}

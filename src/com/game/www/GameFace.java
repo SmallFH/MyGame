@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /** 
- *  ´ò¿ª³ÌĞò½øÈëµÄ½çÃæ
+ *  æ‰“å¼€ç¨‹åºè¿›å…¥çš„ç•Œé¢
  */
 public class GameFace extends JPanel implements ActionListener {           
 	private JFrame jf;
@@ -15,31 +15,31 @@ public class GameFace extends JPanel implements ActionListener {
 	
 	public GameFace() {
 		
-		jf = new JFrame("˜sÒ«´ó×÷Õ½");
-		play = new JButton("¿ªÊ¼ÓÎÏ·");
-		play.setFont(new Font("»ªÎÄ²ÊÔÆ", Font.BOLD, 30));
+		jf = new JFrame("æ¦®è€€å¤§ä½œæˆ˜");
+		play = new JButton("å¼€å§‹æ¸¸æˆ");
+		play.setFont(new Font("åæ–‡å½©äº‘", Font.BOLD, 30));
 		play.setForeground(Color.ORANGE);
-		//°´Å¥±³¾°Í¸Ã÷
+		//æŒ‰é’®èƒŒæ™¯é€æ˜
 		play.setContentAreaFilled(false);
-		//Ïû³ı°´Å¥±ß¿ò
+		//æ¶ˆé™¤æŒ‰é’®è¾¹æ¡†
 		play.setFocusPainted(false);
-		//Ïû³ı°´Å¥¾Û½¹
+		//æ¶ˆé™¤æŒ‰é’®èšç„¦
 		play.setBorder(null);
-		help = new JButton("ÓÎÏ·°ïÖú");
-		help.setFont(new Font("»ªÎÄ²ÊÔÆ", Font.BOLD, 30));
+		help = new JButton("æ¸¸æˆå¸®åŠ©");
+		help.setFont(new Font("åæ–‡å½©äº‘", Font.BOLD, 30));
 		help.setForeground(Color.ORANGE);
 		help.setContentAreaFilled(false);
 		help.setFocusPainted(false);
 		help.setBorder(null);
-		about = new JButton("ÓÎÏ·¼ò½é");
-		about.setFont(new Font("»ªÎÄ²ÊÔÆ", Font.BOLD, 30));
+		about = new JButton("æ¸¸æˆç®€ä»‹");
+		about.setFont(new Font("åæ–‡å½©äº‘", Font.BOLD, 30));
 		about.setForeground(Color.ORANGE);
 		about.setContentAreaFilled(false);
 		about.setFocusPainted(false);
 		about.setBorder(null);
-		about.setMnemonic('a');  //¿ì½İ¼ü£ºAlt+¡®a¡¯
-		over = new JButton("ÍË³öÓÎÏ·");
-		over.setFont(new Font("»ªÎÄ²ÊÔÆ", Font.BOLD, 30));
+		about.setMnemonic('a');  //å¿«æ·é”®ï¼šAlt+â€˜aâ€™
+		over = new JButton("é€€å‡ºæ¸¸æˆ");
+		over.setFont(new Font("åæ–‡å½©äº‘", Font.BOLD, 30));
 		over.setForeground(Color.ORANGE);
 		over.setContentAreaFilled(false);
 		over.setFocusPainted(false);
@@ -47,12 +47,12 @@ public class GameFace extends JPanel implements ActionListener {
 		jf.setSize(JF_WIDTH, JF_HEIGHT);
 		this.setSize(JF_WIDTH, JF_HEIGHT);                  
 		jf.setLocationRelativeTo(null);						
-		//´°¿Ú¾ÓÖĞ						
+		//çª—å£å±…ä¸­						
 		jf.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);  
-		//µã»÷²æºÅ²»ÈÃ´°¿Ú¹Ø
+		//ç‚¹å‡»å‰å·ä¸è®©çª—å£å…³
 		jf.addWindowListener(new window());
 		jf.setResizable(false);								
-		//´°¿Ú´óĞ¡²»¿É¸Ä±ä
+		//çª—å£å¤§å°ä¸å¯æ”¹å˜
 		play.setBounds(JB_X+75, JB_Y, JB_WIDTH, JB_HEIGHT);
 		help.setBounds(JB_X+412,JB_Y+3, JB_WIDTH, JB_HEIGHT);
 		about.setBounds(JB_X+75, JB_Y+403,JB_WIDTH, JB_HEIGHT);
@@ -70,12 +70,12 @@ public class GameFace extends JPanel implements ActionListener {
 	}
 
 	/**
-	 * ÊµÏÖ¶Ô´°¿ÚµÄ¼àÌı
+	 * å®ç°å¯¹çª—å£çš„ç›‘å¬
 	 */
-	//´°¿Ú¼àÌıµÄÊÂ¼ş´¦Àí
+	//çª—å£ç›‘å¬çš„äº‹ä»¶å¤„ç†
 	class window extends WindowAdapter{
 		public void windowClosing(WindowEvent e) {
-			int clo= JOptionPane.showConfirmDialog(jf,"ÓÂÊ¿£¬ÄãÕæµÄÕæµÄÕæµÄ¾ö¶¨ÒªÀë¿ªÂğ£¿","ÍË³öÓÎÏ·",JOptionPane.YES_NO_OPTION);
+			int clo= JOptionPane.showConfirmDialog(jf,"å‹‡å£«ï¼Œä½ çœŸçš„çœŸçš„çœŸçš„å†³å®šè¦ç¦»å¼€å—ï¼Ÿ","é€€å‡ºæ¸¸æˆ",JOptionPane.YES_NO_OPTION);
 			if(clo==JOptionPane.YES_OPTION) {
 				System.exit(0);	
 			}else {
@@ -84,7 +84,7 @@ public class GameFace extends JPanel implements ActionListener {
 	}
 
 	/**
-	 * ¼üÅÌ¼àÌıµÄÊÂ¼ş´¦Àí
+	 * é”®ç›˜ç›‘å¬çš„äº‹ä»¶å¤„ç†
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == play) {
@@ -93,16 +93,16 @@ public class GameFace extends JPanel implements ActionListener {
 		}
 		else if (e.getSource() == help) {
 			JOptionPane.showMessageDialog(jf,
-					"Ò»µãĞ¡Ğ¡µÄÓÎÏ··½·¨¸øÄú£¬Ï£Íû¸øÄú´øÀ´°ïÖú^_^\nÓÎÏ·È«³Ì¿É¼üÅÌ²Ù¿Ø¡£\n¡°¡û¡±£¬¡°¡ú¡±·Ö±ğ¿ØÖÆÈËÎïµÄÒÆ¶¯¡£\n¡°X¡±¼ü¹¥»÷¡£\n¡°SPACE¡±(¿Õ¸ñ)¼ü¿ÉÒÔÔİÍ£ÓÎÏ·ßÏ¡£\nÓÎÏ·ÖĞ°´¡°R¡±¼ü¿ÉÒÔÑ¡ÔñÖØĞÂ¿ªÊ¼ÓÎÏ·µÄËµ£¡\nÓÎÏ·½áÊøÊ±µã»÷¡°·ñ¡±µÄ»°¿ÉÒÔ·µ»ØÖ÷½çÃæÅ¼£¡\nÈç¹ûÄúÓÎÏ·Í¾ÖĞÏëÒªÍË³öµÄ»°Çëµã»÷ÓÒÉÏ½ÇµÄ²æºÅ£¬Ëû¿ÉÒÔ°ïÄú·µ»ØÖ÷½çÃæµÄÄØ£¡\nLast but not list,ÉñÌ½ĞèÒªÔÚ100ÃëÖ®ÄÚÉ±µĞ120²ÅÄÜÓ®µÃÊ¤ÀûÅ¼Ç×£¡",
-					"ÓÎÏ·°ïÖú", JOptionPane.PLAIN_MESSAGE); 
+					"ä¸€ç‚¹å°å°çš„æ¸¸æˆæ–¹æ³•ç»™æ‚¨ï¼Œå¸Œæœ›ç»™æ‚¨å¸¦æ¥å¸®åŠ©^_^\næ¸¸æˆå…¨ç¨‹å¯é”®ç›˜æ“æ§ã€‚\nâ€œâ†â€ï¼Œâ€œâ†’â€åˆ†åˆ«æ§åˆ¶äººç‰©çš„ç§»åŠ¨ã€‚\nâ€œXâ€é”®æ”»å‡»ã€‚\nâ€œSPACEâ€(ç©ºæ ¼)é”®å¯ä»¥æš‚åœæ¸¸æˆå‘¦ã€‚\næ¸¸æˆä¸­æŒ‰â€œRâ€é”®å¯ä»¥é€‰æ‹©é‡æ–°å¼€å§‹æ¸¸æˆçš„è¯´ï¼\næ¸¸æˆç»“æŸæ—¶ç‚¹å‡»â€œå¦â€çš„è¯å¯ä»¥è¿”å›ä¸»ç•Œé¢å¶ï¼\nå¦‚æœæ‚¨æ¸¸æˆé€”ä¸­æƒ³è¦é€€å‡ºçš„è¯è¯·ç‚¹å‡»å³ä¸Šè§’çš„å‰å·ï¼Œä»–å¯ä»¥å¸®æ‚¨è¿”å›ä¸»ç•Œé¢çš„å‘¢ï¼\nLast but not list,ç¥æ¢éœ€è¦åœ¨100ç§’ä¹‹å†…æ€æ•Œ120æ‰èƒ½èµ¢å¾—èƒœåˆ©å¶äº²ï¼",
+					"æ¸¸æˆå¸®åŠ©", JOptionPane.PLAIN_MESSAGE); 
 		}
 		else if (e.getSource() == about) {
 			JOptionPane.showMessageDialog(jf,
-					"ºÚĞÄ²©Ê¿´ø×ÅÉñÃØ¿Æ¼¼À´µ½Ğ°¶ñÏ¿¹È¸´ÖÆÁË´óÁ¿µÄ¹ÖÎï£¬\nÉñÌ½ÎªÁË´İ»Ù²©Ê¿µÄ»úÆ÷Ö»ÉíÀ´µ½ÁËĞ°¶ñÏ¿¹ÈºÍ¹ÖÎï¶·Ö¾¶·ÓÂ¡£\n±¾ÓÎÏ·ÓÉ°Ë×é×éÔ±-¸¶ºÀÏ¹±à¶ø³ÉÇĞÎğÄ£·Â", "ÓÎÏ·¼ò½é",
+					"é»‘å¿ƒåšå£«å¸¦ç€ç¥ç§˜ç§‘æŠ€æ¥åˆ°é‚ªæ¶å³¡è°·å¤åˆ¶äº†å¤§é‡çš„æ€ªç‰©ï¼Œ\nç¥æ¢ä¸ºäº†æ‘§æ¯åšå£«çš„æœºå™¨åªèº«æ¥åˆ°äº†é‚ªæ¶å³¡è°·å’Œæ€ªç‰©æ–—å¿—æ–—å‹‡ã€‚\næœ¬æ¸¸æˆç”±å…«ç»„ç»„å‘˜-ä»˜è±ªçç¼–è€Œæˆåˆ‡å‹¿æ¨¡ä»¿", "æ¸¸æˆç®€ä»‹",
 					JOptionPane.PLAIN_MESSAGE); 
 		}
 		else if (e.getSource() == over) {
-			int shut = JOptionPane.showConfirmDialog(jf, "ÓÂÊ¿£¬ÄãÕæµÄÕæµÄÕæµÄ¾ö¶¨ÒªÀë¿ªÂğ£¿", "ÍË³öÓÎÏ·", JOptionPane.YES_NO_OPTION);
+			int shut = JOptionPane.showConfirmDialog(jf, "å‹‡å£«ï¼Œä½ çœŸçš„çœŸçš„çœŸçš„å†³å®šè¦ç¦»å¼€å—ï¼Ÿ", "é€€å‡ºæ¸¸æˆ", JOptionPane.YES_NO_OPTION);
 			if (shut == JOptionPane.YES_OPTION) {
 				System.exit(0);
 			} else {
@@ -111,14 +111,14 @@ public class GameFace extends JPanel implements ActionListener {
 	}
 
 	/**
-	 * ³ÌĞòµÄÈë¿Ú
+	 * ç¨‹åºçš„å…¥å£
 	 */
 	public static void main(String[] args) {
 		new GameFace();
 	}
 
 	/**
-	 * »­Ö÷½çÃæµÄ»­±Ê
+	 * ç”»ä¸»ç•Œé¢çš„ç”»ç¬”
 	 */
 	public void paint(Graphics g) {
 		Image im = new ImageIcon("src/images/Map.png").getImage(); 
